@@ -40,11 +40,13 @@ public class MyAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        View v= LayoutInflater.from(context).inflate(R.layout.my_adapter_layout,viewGroup,false);
-        ImageView iv=(ImageView)v.findViewById(R.id.imageView);
-        TextView tv=(TextView)v.findViewById(R.id.textView);
-        TextView tv1=(TextView)v.findViewById(R.id.textView2);
-
+        View v = LayoutInflater.from(context).inflate(R.layout.my_adapter_layout, viewGroup, false);
+        ImageView iv = v.findViewById(R.id.imageView);
+        TextView tv = v.findViewById(R.id.textView);
+        TextView tv1 = v.findViewById(R.id.textView2);
+        iv.setImageResource(img.get(i));
+        tv.setText(profile_name.get(i));
+        tv1.setText(msg.get(i));
         return v;
     }
 }
